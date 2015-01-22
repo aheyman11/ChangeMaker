@@ -10,6 +10,6 @@ public class ChangeMakerTest {
         System.out.println("Change for 20: " + changeTest.makeChange(20));
         System.out.println("Change for 25: " + changeTest.makeChange(25));
         System.out.println("Change for 45: " + changeTest.makeChange(45));
-        System.out.println("Change for 50: " + changeTest.makeChange(50));
+        System.out.println("Change for 55: " + changeTest.makeChange(55));
 	}
 }
