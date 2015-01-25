@@ -9,9 +9,9 @@ public class ChangeMaker {
 
     public ArrayList<ArrayList<Integer>> makeChange(int amount) {
         ArrayList<ArrayList<Integer>> possibleChanges = new ArrayList<ArrayList<Integer>>();
-        ArrayList<ArrayList<Integer>> changesFiveLess = new ArrayList<ArrayList<Integer>>();
-        ArrayList<ArrayList<Integer>> changesTenLess = new ArrayList<ArrayList<Integer>>();
-        ArrayList<ArrayList<Integer>> changesQuarterLess = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> changesFiveLess;
+        ArrayList<ArrayList<Integer>> changesTenLess;
+        ArrayList<ArrayList<Integer>> changesQuarterLess;
         ArrayList<ArrayList<Integer>> changeForNickel = new ArrayList<ArrayList<Integer>>();
         if (amount == 5) {
             ArrayList<Integer> nickel = new ArrayList<Integer>();
@@ -19,17 +19,8 @@ public class ChangeMaker {
             changeForNickel.add(nickel);
             return changeForNickel;
         }
-        if (amount == 10) {
-            ArrayList<Integer> dime = new ArrayList<Integer>();
-            dime.add(10);
-            possibleChanges.add(dime);
-        }
-        if (amount == 25) {
-            ArrayList<Integer> quarter = new ArrayList<Integer>();
-            quarter.add(25);
-            possibleChanges.add(quarter);
-        }
-        if (amount != 5) {
+
+        else {
             //System.out.println(possibleChanges);
             if (amount > 5) {
                 changesFiveLess = new ArrayList<ArrayList<Integer>>(makeChange(amount-5));
@@ -40,7 +31,6 @@ public class ChangeMaker {
                 }
                 //System.out.println("changesFiveLess: " + changesFiveLess);
             }
-
             if (amount > 10) {
                 changesTenLess = new ArrayList<ArrayList<Integer>>(makeChange(amount-10));
                 for (int i = 0; i < changesTenLess.size(); i++) {
@@ -51,7 +41,6 @@ public class ChangeMaker {
                     }
                 }
             }
-
             if (amount > 25) {
                 changesQuarterLess = new ArrayList<ArrayList<Integer>>(makeChange(amount-25));
                 for (int i = 0; i < changesQuarterLess.size(); i++) {
@@ -62,7 +51,16 @@ public class ChangeMaker {
                     }
                 }
             }
-            //possibleChanges.clear();
+            if (amount == 10) {
+                ArrayList<Integer> dime = new ArrayList<Integer>();
+                dime.add(10);
+                possibleChanges.add(dime);
+            }
+            if (amount == 25) {
+                ArrayList<Integer> quarter = new ArrayList<Integer>();
+                quarter.add(25);
+                possibleChanges.add(quarter);
+            }
             return possibleChanges;
         }
     }
