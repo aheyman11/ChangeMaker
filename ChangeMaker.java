@@ -7,6 +7,12 @@ import java.util.Collections;
  */
 public class ChangeMaker {
 
+    /**
+     *
+     * @param amount the amount to be changed.
+     * @return ArrayList containing all possible ways of changing amount into nickels, dimes, and quarters.
+     * <dt><b> @precondition </b><dd> amount is positive integer multiple of 5.
+     */
     public ArrayList<ArrayList<Integer>> makeChange(int amount) {
         ArrayList<ArrayList<Integer>> possibleChanges = new ArrayList<ArrayList<Integer>>();
         ArrayList<ArrayList<Integer>> changesFiveLess;
