@@ -6,14 +6,21 @@ import java.util.Collections;
  * Created by andreahe on 1/21/15.
  */
 public class ChangeMaker {
-
+    public static void main(String[] args) {
+        if (Integer.parseInt(args[0]) % 5 != 0) {
+            System.out.println(args[0] + " is not a multiple of 5.");
+        }
+        else {
+            System.out.println("Change for " + args[0] + ": " + makeChange(Integer.parseInt(args[0])));
+        }
+    }
     /**
      *
      * @param amount the amount to be changed.
      * @return ArrayList containing all possible ways of changing amount into nickels, dimes, and quarters.
      * <dt><b> @precondition </b><dd> amount is positive integer multiple of 5.
      */
-    public ArrayList<ArrayList<Integer>> makeChange(int amount) {
+    public static ArrayList<ArrayList<Integer>> makeChange(int amount) {
         ArrayList<ArrayList<Integer>> possibleChanges = new ArrayList<ArrayList<Integer>>();
         ArrayList<ArrayList<Integer>> changesFiveLess;
         ArrayList<ArrayList<Integer>> changesTenLess;
